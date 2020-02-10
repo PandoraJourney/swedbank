@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="lt.swedbank.playground"/>
+
+    <bean name="slideManager" class="lt.swedbank.playground.library.sites.manager.SiteManager">
+        <constructor-arg name="site" ref="slide"/>
+    </bean>
+
+    <bean name="slide" class="lt.swedbank.playground.library.sites.impl.Slide">
+        <constructor-arg name="kidCount" value="1"/>
+        <constructor-arg name="name" value="slide"/>
+    </bean>
+
+</beans>
